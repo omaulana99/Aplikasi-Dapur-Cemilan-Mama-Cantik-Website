@@ -1,0 +1,497 @@
+/* Reset default styles */
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+/* Body Styling dengan Warna yang Menyesuaikan Jiwa UMKM */
+body {
+    font-family: 'Poppins', Arial, sans-serif;
+    background-color: #f8f5f0; /* Warna latar belakang lembut seperti krem */
+    color: #4b4b4b; /* Warna teks yang lebih gelap dan mudah dibaca */
+    line-height: 1.6;
+}
+
+header {
+    background-color: #3e8e41; /* Hijau yang mencerminkan kesuburan dan keberlanjutan */
+    color: #fff; /* Teks putih untuk kontras yang jelas */
+    padding: 1rem 2rem;
+    border-radius: 8px;
+}
+
+h1 {
+    font-size: 1.8rem;
+    font-weight: 600;
+    text-align: center;
+}
+
+/* Welcome message dengan animasi bergerak dan warna yang mencerminkan semangat UMKM */
+.welcome-message {
+    font-size: 2rem;
+    font-weight: bold;
+    text-align: center;
+    padding: 1rem;
+    margin-top: 20px;
+    animation: marquee 25s linear infinite;
+    white-space: nowrap;
+    color: #d67a16; /* Warna oranye yang hangat, menggambarkan semangat dan optimisme */
+}
+
+/* Cart Icon and Count Styling */
+.cart-icon {
+    font-size: 1.8rem;
+    cursor: pointer;
+    position: fixed; /* Posisi tetap saat halaman digulir */
+    top: 20px; /* Jarak dari atas halaman */
+    right: 20px; /* Jarak dari kanan halaman */
+    z-index: 9999;
+    transition: all 0.3s ease; /* Animasi halus saat posisi berubah */
+}
+
+#cart-count {
+    position: absolute;
+    top: -5px;
+    right: -5px;
+    background: red;
+    color: #fff;
+    border-radius: 50%;
+    padding: 3px 6px;
+    font-size: 0.9rem;
+    font-weight: bold;
+    min-width: 18px;
+    min-height: 18px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+}
+
+/* Posisi cart icon di samping menu */
+.menu {
+    position: relative; /* Set relative untuk kontainer menu */
+}
+
+.cart-icon {
+    position: fixed; /* Menggunakan fixed agar mengikuti scroll */
+    top: 20px; /* Jarak dari atas halaman */
+    right: 20px; /* Jarak dari kanan halaman */
+}
+
+/* Responsif untuk ukuran layar kecil */
+@media (max-width: 1024px) {
+    .cart-icon {
+        font-size: 1.5rem; /* Ukuran font lebih kecil di layar yang lebih kecil */
+        top: 10px;
+        right: 10px;
+    }
+
+    #cart-count {
+        font-size: 0.8rem;
+        padding: 2px 5px;
+    }
+}
+
+/* Responsif untuk ukuran layar lebih kecil (misalnya mobile) */
+@media (max-width: 768px) {
+    .cart-icon {
+        font-size: 1.3rem; /* Ukuran font lebih kecil pada layar lebih kecil */
+        top: 10px;
+        right: 5px;
+    }
+
+    #cart-count {
+        font-size: 0.7rem;
+        padding: 2px 5px;
+    }
+}
+
+/* Responsif untuk ukuran layar sangat kecil */
+@media (max-width: 480px) {
+    .cart-icon {
+        font-size: 1.2rem; /* Ukuran font lebih kecil lagi di layar sangat kecil */
+        top: 10px;
+        right: 5px;
+    }
+
+    #cart-count {
+        font-size: 0.6rem;
+        padding: 1px 4px;
+    }
+}
+
+
+/* Container for filter and product sections */
+.container {
+    display: flex; /* Make the container a flex container */
+    gap: 2rem; /* Adds space between the filter column and the product column */
+    padding: 2rem;
+}
+
+/* Hamburger Menu */
+.hamburger-menu {
+    cursor: pointer;
+    font-size: 24px;
+    padding: 10px;
+}
+
+/* Hide filter column by default */
+.filter-column {
+    display: none;
+}
+
+/* When filter column is active, display it */
+.filter-column.active {
+    display: block;
+}
+.menu-text {
+    font-size: 18px;
+    margin-left: 8px; /* Jarak antara ikon dan teks */
+    color: blue; /* Ubah warna teks menjadi biru */
+}
+
+/* Product column styling */
+.product-column {
+    flex-grow: 1; /* Let the product column take up the remaining space */
+}
+
+/* Filter button styling */
+.filter-buttons {
+    display: flex;
+    flex-direction: column; /* Arrange buttons vertically */
+    gap: 1rem;
+}
+
+.filter-label {
+    font-size: 1.2rem;
+    color: #333;
+    cursor: pointer;
+}
+
+.filter-label input {
+    margin-right: 10px;
+    accent-color: #009688;
+}
+
+
+/* Product Layout */
+.product-list {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 1.5rem;
+    padding: 1.5rem;
+}
+
+.product {
+    background: #fff;
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    padding: 1.5rem;
+    text-align: center;
+    width: 250px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.product:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 6px 16px rgba(0, 0, 0, 0.15);
+}
+
+.product img {
+    width: 100%;
+    height: auto;
+    border-radius: 5px;
+    transition: transform 0.3s ease;
+}
+
+.product:hover img {
+    transform: scale(1.1);
+}
+
+.product h2 {
+    font-size: 1.4rem;
+    margin: 0.8rem 0;
+    font-weight: 600;
+}
+
+.product p {
+    color: #009688;
+    font-weight: bold;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+/* Price Strikethrough */
+.product p del {
+    color: #888;
+    font-size: 1.2rem;
+    text-decoration: line-through;
+    margin-right: 10px;
+}
+
+.product p span {
+    margin-right: 5px;
+    font-size: 1.3rem;
+}
+
+.product button {
+    padding: 0.7rem 1.5rem;
+    background-color: #009688;
+    color: #fff;
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+    transition: background 0.3s ease, transform 0.2s ease;
+    font-weight: 600;
+    width: 100%;
+}
+
+.product button:hover {
+    background-color: #00796b;
+    transform: translateY(-3px);
+}
+
+/* Modal Styling */
+.modal {
+    display: none;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.5);
+    justify-content: center;
+    align-items: center;
+}
+
+.modal-content {
+    background: #fff;
+    padding: 2.5rem;
+    width: 90%;
+    max-width: 500px;
+    position: relative;
+    border-radius: 12px;
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+    max-height: 80vh;
+    overflow-y: auto;
+}
+
+.close {
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    font-size: 1.8rem;
+    cursor: pointer;
+    color: #333;
+}
+
+/* Cart Items Styling */
+#cart-items img {
+    width: 60px;
+    margin-right: 10px;
+}
+
+#cart-items div {
+    margin: 0.8rem 0;
+}
+
+/* Quantity Control */
+.quantity-control {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+    margin: 1.5rem 0;
+}
+
+.quantity-control button {
+    padding: 7px 14px;
+    font-size: 1.3rem;
+    background-color: #009688;
+    color: #fff;
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+    transition: background 0.3s ease;
+}
+
+.quantity-control button:hover {
+    background-color: #00796b;
+}
+
+.quantity-control input {
+    width: 45px;
+    height: 35px;
+    text-align: center;
+    font-size: 1.2rem;
+    border: 1px solid #ddd;
+    border-radius: 8px;
+}
+
+/* Cart Item Styling */
+.cart-item {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin-bottom: 15px;
+    padding: 12px;
+    border-bottom: 1px solid #ddd;
+    background-color: #fafafa;
+    border-radius: 8px;
+}
+
+.cart-item img {
+    width: 60px;
+    height: 60px;
+    margin-left: 15px;
+}
+
+.product-name, .product-price, .product-quantity {
+    margin-right: 12px;
+}
+
+.product-name {
+    font-weight: bold;
+    color: #333;
+    margin-right: 20px;
+}
+
+.product-price {
+    color: #28a745;
+    margin-right: 20px;
+}
+
+.product-quantity {
+    font-style: italic;
+    margin-right: 20px;
+}
+
+/* Remove Button */
+.remove-button {
+    margin-left: 10px;
+}
+
+/* Total Price */
+#total-amount {
+    font-size: 1.5rem;
+    font-weight: bold;
+    margin-top: 15px;
+    color: #333;
+}
+
+/* WhatsApp Button */
+.whatsapp-button {
+    background-color: #25D366;
+    color: white;
+    font-size: 18px;
+    padding: 12px 25px;
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+    width: 100%;
+    margin-top: 20px;
+    box-sizing: border-box;
+    transition: background-color 0.3s ease;
+}
+
+.whatsapp-button:hover {
+    background-color: #128C7E;
+}
+
+/* Remove Button Styling */
+.remove-button {
+    background-color: #f44336;
+    color: white;
+    border: none;
+    padding: 8px 16px;
+    font-size: 14px;
+    cursor: pointer;
+    border-radius: 5px;
+    transition: background-color 0.3s ease;
+}
+
+.remove-button:hover {
+    background-color: #d32f2f;
+}
+
+.remove-button:active {
+    background-color: #c62828;
+}
+footer {
+    background-color: #3e8e41; /* Warna hijau yang serasi dengan tema UMKM */
+    color: white;
+    text-align: center;
+    padding: 20px;
+    position: relative;
+    bottom: 0;
+    width: 100%;
+}
+
+footer .footer-content p {
+    margin: 5px 0;
+    font-size: 1rem;
+}
+.social-icons {
+    display: flex;  /* Menggunakan Flexbox untuk sejajarkan secara horizontal */
+    justify-content: center;  /* Menyelaraskan ikon di tengah */
+    gap: 15px;  /* Menambahkan jarak antara ikon */
+}
+
+.social-icons a {
+    display: inline-block;  /* Membuat tiap tautan tampil sebagai blok sebaris */
+}
+
+.social-icons img {
+    width: 40px;  /* Sesuaikan ukuran ikon sesuai kebutuhan */
+    height: auto;  /* Menjaga rasio aspek gambar */
+}
+
+/* Mobile Responsiveness */
+@media (max-width: 768px) {
+    /* Header */
+    header {
+        padding: 0.5rem 1rem;
+    }
+
+    h1 {
+        font-size: 1.4rem;
+    }
+
+    /* Product Layout */
+    .product-list {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    /* Cart Icon */
+    .cart-icon {
+        font-size: 2.2rem;
+        top: 10px;
+        right: 10px;
+    }
+
+    /* Modal */
+    .modal-content {
+        width: 95%;
+    }
+
+    /* Product */
+    .product {
+        width: 90%;
+        margin-bottom: 1rem;
+    }
+
+    /* Cart Item */
+    .cart-item {
+        flex-direction: column;
+        align-items: flex-start;
+    }
+
+    /* Total */
+    #total-amount {
+        font-size: 1.3rem;
+    }
+}
