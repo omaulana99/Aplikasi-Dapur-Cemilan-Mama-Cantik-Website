@@ -1,0 +1,166 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dapur Cemilan Mama Cantik</title>
+    <!-- Menambahkan favicon -->
+    <link rel="icon" href="logo/logo.jpg" type="image-product/kue salju.jpeg">
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+
+</head>
+<body>
+    <header>
+        <h1>Dapur Cemilan Mama Cantik</h1>
+    
+        <!-- Teks Berjalan -->
+        <div class="scrolling-text">
+            <p>Selamat datang di Dapur Cemilan Mama Cantik! Nikmati berbagai pilihan kue lezat kami. Belanja sekarang!</p>
+        </div>
+    
+        <!-- Form Pencarian Produk -->
+        <div class="search-bar">
+            <input type="text" id="search-input" placeholder="Pencarian.." onkeyup="searchProduct()">
+            
+        </div>
+    
+        <div class="cart-icon" onclick="showCart()">
+            🛒 <span id="cart-count">0</span>
+        </div>
+    </header>
+    
+    
+
+  
+
+    <div class="container">
+        <!-- Hamburger Menu with Text -->
+        <div class="hamburger-menu" onclick="toggleFilterMenu()">
+            &#9776; <span class="menu-text">Pilihan Menu</span>
+        </div>
+    
+        <!-- Filter Column -->
+        <div class="filter-column" id="filterColumn">
+            <div class="filter-buttons">
+                <label class="filter-label">
+                    <input type="radio" name="filter" onclick="filterProducts('all')" id="filterAll">
+                    All
+                </label>
+                <label class="filter-label">
+                    <input type="radio" name="filter" onclick="filterProducts('produkA')" id="filterProdukA">
+                    Kue Nastar
+                </label>
+                <label class="filter-label">
+                    <input type="radio" name="filter" onclick="filterProducts('produkB')" id="filterProdukB">
+                    Kue Salju
+                </label>
+                <label class="filter-label">
+                    <input type="radio" name="filter" onclick="filterProducts('produkC')" id="filterProdukC">
+                    Kue Coklat
+                </label>
+                <label class="filter-label">
+                    <input type="radio" name="filter" onclick="filterProducts('produkD')" id="filterProdukD">
+                    Kue Kacang
+                </label>
+            </div>
+        </div>
+    
+        <!-- Product Column -->
+        <div class="product-column">
+            <!-- Your product list here -->
+        </div>
+    </div>
+    
+
+    <main>
+        <section class="product-list">
+            <div class="product" data-category="produkA" data-name="Kue Nastar" data-price="50000" data-image="images/image-product/kue nastar enak.jpg">
+                <img src="image-product/kue nastar enak.jpg" alt="Kue Nastar">
+                <h2>Kue Nastar</h2>
+                <p><del>Rp 60,000</del> <span>Rp 50,000</span></p>
+                <div class="quantity-control">
+                    <button onclick="decreaseQuantity('Kue Nastar')">-</button>
+                    <input type="text" id="quantity-Kue Nastar" value="1" readonly>
+                    <button onclick="increaseQuantity('Kue Nastar')">+</button>
+                </div>
+                <button onclick="addToCart('Kue Nastar', 50000, 'image-product/kue nastar enak.jpg')">Tambah ke Keranjang</button>
+            </div>
+        
+            <div class="product" data-category="produkB" data-name="Kue Salju" data-price="45000" data-image="image-product/kue salju.jpeg">
+                <img src="image-product/kue salju.jpeg" alt="Kue Salju">
+                <h2>Kue Salju</h2>
+                <p><del>Rp 60,000</del> <span>Rp 45,000</span></p>
+                <div class="quantity-control">
+                    <button onclick="decreaseQuantity('Kue Salju')">-</button>
+                    <input type="text" id="quantity-Kue Salju" value="1" readonly>
+                    <button onclick="increaseQuantity('Kue Salju')">+</button>
+                </div>
+                <button onclick="addToCart('Kue Salju', 45000, 'image-product/kue salju.jpeg')">Tambah ke Keranjang</button>
+            </div>
+
+            <div class="product" data-category="produkC" data-name="Kue Coklat" data-price="40000" data-image="image-product/kue salju.jpeg">
+                <img src="image-product/kue coklat.jpg" alt="Kue Coklat">
+                <h2>Kue Coklat</h2>
+                <p><del>Rp 55,000</del> <span>Rp 40,000</span></p>
+                <div class="quantity-control">
+                    <button onclick="decreaseQuantity('Kue Coklat')">-</button>
+                    <input type="text" id="quantity-Kue Coklat" value="1" readonly>
+                    <button onclick="increaseQuantity('Kue Coklat')">+</button>
+                </div>
+                <button onclick="addToCart('Kue Coklat', 40000, 'image-product/kue coklat.jpg')">Tambah ke Keranjang</button>
+            </div>
+            <div class="product" data-category="produkD" data-name="Kue Kacang" data-price="55000" data-image="image-product/kue kacang.jpeg">
+                <img src="image-product/kue kacang.jpeg" alt="Kue Coklat">
+                <h2>Kue Kacang</h2>
+                <p><del>Rp 59,000</del> <span>Rp 55,000</span></p>
+                <div class="quantity-control">
+                    <button onclick="decreaseQuantity('Kue Kacang')">-</button>
+                    <input type="text" id="quantity-Kue Kacang" value="1" readonly>
+                    <button onclick="increaseQuantity('Kue Kacang')">+</button>
+                </div>
+                <button onclick="addToCart('Kue Kacang', 55000, 'image-product/kue kacang.jpeg')">Tambah ke Keranjang</button>
+            </div>
+
+        </section>
+        
+    </main>
+
+    <!-- Keranjang Modal -->
+    <div id="cart-modal" class="modal">
+        <div class="modal-content">
+            <span class="close" onclick="closeCart()">&times;</span>
+            <h2>Keranjang Belanja</h2>
+            <!-- Daftar item keranjang -->
+            <div id="cart-items"></div>
+            <!-- Total amount -->
+            <p id="total-amount"></p>
+        </div>
+    </div>
+
+    <!-- Footer Section -->
+   <footer>
+    <div class="footer-content">
+        <p>&copy; <span id="current-date"></span> UMKM Shop. All Rights Reserved.</p>
+        <p>Alamat: Jl. Contoh UMKM No.123, Kota UMKM</p>
+        <p>Email: contact@umkmshop.com</p>
+    </div>
+
+    <div class="social-icons">
+        <!-- Ikon Sosial Media -->
+        <a href="https://www.instagram.com" target="_blank" title="Instagram">
+            <img src="image-sosmed/ig-logo.png" alt="Instagram">
+        </a>
+        <a href="https://www.facebook.com" target="_blank" title="Facebook">
+            <img src="image-sosmed/fb-logo.png" alt="Facebook">
+        </a>
+        <a href="https://wa.me/087877611218" target="_blank" title="WhatsApp">
+            <img src="image-sosmed/wa-logo.png" alt="WhatsApp">
+        </a>
+    </div>
+    
+</footer>
+
+    <script src="script.js"></script>
+</body>
+</html>
